@@ -24,7 +24,7 @@ function startBedrockRelay() {
     try {
       relay = new Relay({
       /* Qui mettiamo dove il relay ASCOLTA (il locale) */
-        host: PROXY_HOST,        // 127.0.0.1
+        host: '0.0.0.0',        // 127.0.0.1
         port: PROXY_PORT,        // 19133
         version: '1.26.0',       // La versione che abbiamo stabilito
         skipPing: true,
