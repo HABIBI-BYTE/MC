@@ -23,19 +23,19 @@ function startBedrockRelay() {
   return new Promise((resolve, reject) => {
     try {
       relay = new Relay({
-        /* Upstream = the real Bedrock server */
-         host: config.server.ip,       // Ora legge dal settings.json!
-         port: config.server.port,     // Ora legge dal settings.json!
-         version: '1.26.0',
-         skipPing: true,               // Evita il "Ping timed out" di Aternos   // e.g. "1.21.1"
+      /* Qui mettiamo dove il relay ASCOLTA (il locale) */
+        host: PROXY_HOST,        // 127.0.0.1
+        port: PROXY_PORT,        // 19133
+        version: '1.26.0',       // La versione che abbiamo stabilito
+        skipPing: true,
 
-        /* Downstream = local Java endpoint that mineflayer connects to */
+        /* Qui mettiamo dove il relay INVIA i dati (il server Aternos) */
         destination: {
-          host: PROXY_HOST,
-          port: PROXY_PORT
+          host: config.server.ip,
+          port: config.server.port
         },
 
-        /* Offline / cracked auth (matches settings.json "offline" type) */
+        /* Auth */
         offline: config['bot-account'].type === 'offline',
         username: config['bot-account'].username,
         password: config['bot-account'].password || undefined
