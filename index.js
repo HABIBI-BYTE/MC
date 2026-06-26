@@ -235,7 +235,7 @@ function createBot() {
       auth: config['bot-account'].type,  // 'offline' for cracked/Bedrock
       host: PROXY_HOST,
       port: PROXY_PORT,
-      version: config.server.version,
+      version: 1.21,
       hideErrors: false,
       checkTimeoutInterval: 120000
     });
