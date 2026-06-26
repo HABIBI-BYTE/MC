@@ -586,10 +586,9 @@ console.log('='.repeat(50));
 
 startBedrockRelay()
   .then(() => {
-    // Give the relay a moment to fully initialize before mineflayer connects
-    setTimeout(() => createBot(), 1500);
+    console.log("Relay pronto! Ora avvio il Bot...");
+    createBot(); // Il bot parte SOLO se il relay ha confermato l'avvio
   })
-  .catch((e) => {
-    console.log('[FATAL] Could not start Bedrock relay. Exiting.', e.message);
-    process.exit(1);
+  .catch((err) => {
+    console.error("Errore fatale all'avvio del relay:", err);
   });
