@@ -14,7 +14,7 @@ const { createClient, Relay } = require('bedrock-protocol');
 // We use a local Java-protocol relay so mineflayer (Java-only) can
 // connect to a Bedrock server.  The relay listens on localhost:19133
 // and forwards traffic to the real Bedrock server.
-const PROXY_HOST = '127.0.0.1';
+const PROXY_HOST = '0.0.0.0';
 const PROXY_PORT = 19133; // local Java-side port mineflayer connects to
 
 let relay = null;
