@@ -26,7 +26,7 @@ function startBedrockRelay() {
         /* Upstream = the real Bedrock server */
          host: config.server.ip,       // Ora legge dal settings.json!
          port: config.server.port,     // Ora legge dal settings.json!
-         version: 1.21,
+         version: 1.26.0,
          skipPing: true,               // Evita il "Ping timed out" di Aternos   // e.g. "1.21.1"
 
         /* Downstream = local Java endpoint that mineflayer connects to */
